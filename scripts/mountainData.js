@@ -555,10 +555,10 @@ function gettingMountainInfo() {
 
   mountainsArray.forEach((mountain) => {
     let columns = document.createElement("div");
-    columns.classList.add();
+    columns.classList.add("col-md-4", "my-4");
 
     let createElement = document.createElement("div");
-    createElement.classList.add("card", "col-3");
+    createElement.classList.add("card", "h-100");
 
     let createCardHeader = document.createElement("div");
     createCardHeader.classList.add("card-header");
@@ -576,8 +576,24 @@ function gettingMountainInfo() {
     createCardBody.classList.add("card-body");
     createElement.appendChild(createCardBody);
 
+    let buttonForShow = document.createElement("button");
+    buttonForShow.classList.add("btn", "btn-primary", "w-25", "mb-3", "rounded-5", "ms-3");
+    buttonForShow.innerText = "Show";
+
+    buttonForShow.addEventListener("click", () => {
+      if (buttonForShow.innerText === "Hide") {
+        buttonForShow.innerText = "Show";
+        createCardBodyText.style.display = "none";
+      } else {
+        buttonForShow.innerText = "Hide";
+        createCardBodyText.style.display = "block";
+      }
+    });
+    createElement.appendChild(buttonForShow);
+
     let createCardBodyText = document.createElement("p");
     createCardBodyText.innerText = mountain.desc;
+    createCardBodyText.style.display = "none";
     createCardBody.appendChild(createCardBodyText);
 
     let createCardImageTop = document.createElement("img");
@@ -585,15 +601,16 @@ function gettingMountainInfo() {
     createElement.appendChild(createCardImageTop);
 
     let createCardFooter = document.createElement("div");
-    createCardFooter.classList.add("card-footer");
+    createCardFooter.classList.add("card-footer", "text-center");
     createElement.appendChild(createCardFooter);
 
     let createTextFooter = document.createElement("p");
     createTextFooter.innerText = `Coordinates are ${mountain.coords.lat} and ${mountain.coords.lng}`;
     createCardFooter.appendChild(createTextFooter);
 
+    // columns.appendChild(createElement);
     columns.appendChild(createElement);
-    showCase.appendChild(createElement);
+    showCase.appendChild(columns);
   });
 }
 

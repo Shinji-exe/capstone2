@@ -11,14 +11,29 @@
     <title>Document</title>
   </head>
   <body>
-    <header>
-      <a href="">
-        <img src="" alt="" />
-      </a>
-      <nav></nav>
-      <a href=""> </a>
-    </header>
+    <header id="navbar" class=" py-3 border-bottom changeOpacity navigation position-fixed z-3 container-fluid">
 
+      <nav class="d-flex container-fluid justify-content-between align-content-center ">
+        <a href="index.html">
+          <img src="./homeImages/logoipsum-215.svg" alt="logo" />
+        </a>
+        <ul class="nav nav-underline align-content-center">
+          <li class="nav-item">
+            <a class="nav-link active" href="parks.html">Parks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mountain.html">Mountains</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Store</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Map</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- <a href="">Contact Us</a> -->
+    </header>
     <main>
       <select name="" id="mountainSelector" onchange="filterByName();">
         <option value="">Select...</option>
@@ -45,27 +60,15 @@
         </tbody>
       </table> -->
 
-      <div id="gridDisplay" class=" container-fluid d-flex justify-content-center">
-        <div class="row container" id="showCase">
-          <!-- <div class="col-4" id="showCase">
+      <div id="gridDisplay" class=" container">
+        <div class="row" id="showCase">
 
-            </div> -->
+       <div class="col-md-4 my-2">
+<div class="card h-100">
+  <div class="card-header"></div>
+</div>
+       </div>
 
-          <!-- <div id="showCase" class="w-50 my-3"> -->
-
-          <!-- <div id="cardBody" class="card-body">
-        
-                </div>
-        
-                <div id="coordinates">
-        
-                </div>
-        
-                <div id="cardFooter" class="card-footer">
-        
-                </div> -->
-
-          <!-- </div> -->
         </div>
       </div>
 
