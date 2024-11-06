@@ -22,3 +22,18 @@ html{
  .changeOpacity{
 background-color: white;
 }
+
+.theMain{
+    padding-top: 5rem;
+}
+
+.spara{
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 1s ease-in;
+}
+
+.spara--visible{
+    transform: translateY(0);
+    opacity: 1;
+}

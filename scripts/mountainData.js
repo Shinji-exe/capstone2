@@ -540,7 +540,7 @@ const cardFooter = document.querySelector("#cardFooter");
 const mountainImageDisplay = document.querySelector("#mountainImageDisplay");
 const gridDisplay = document.querySelector("#gridDisplay");
 
-function mountainSelectData() {
+function populateMountainOption() {
   for (let i = 0; i < mountainsArray.length; i++) {
     let createOptions = document.createElement("option");
     createOptions.innerText = mountainsArray[i].name;
@@ -548,9 +548,9 @@ function mountainSelectData() {
     mountainSelector.appendChild(createOptions);
   }
 }
-mountainSelectData();
+populateMountainOption();
 
-function gettingMountainInfo() {
+function displayMountainCards() {
   showCase.innerHTML = "";
 
   mountainsArray.forEach((mountain) => {
@@ -614,7 +614,7 @@ function gettingMountainInfo() {
   });
 }
 
-gettingMountainInfo();
+displayMountainCards();
 
 // mountainsArray.forEach((mountain)=>{
 // cardHeader.innerText = mountain.name

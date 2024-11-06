@@ -1,9 +1,252 @@
-const navbar = document.getElementById("navbar")
+const navbar = document.getElementById("navbar");
 
-window.addEventListener("scroll",()=>{
-if(window.scrollY >= 50){
-navbar.classList.add("changeOpacity")
-}else{
-    navbar.classList.remove("changeOpacity")
-}
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= 50) {
+    navbar.classList.add("changeOpacity");
+  } else {
+    navbar.classList.remove("changeOpacity");
+  }
+});
+
+const paragraphs = document.querySelectorAll(".spara");
+
+document.addEventListener("scroll",()=>{
+paragraphs.forEach(paragraph => {
+    if(showParagraph(paragraph)){
+        paragraph.classList.add("spara--visible")
+    }
 })
+})
+
+function showParagraph(element) {
+  const section = element.getBoundingClientRect();
+  return section.bottom > 0 && section.top < (window.innerHeight - 150 || document.documentElement.clientHeight - 150);
+}
+
+const marketplaceItems = [
+  {
+    id: 1,
+    name: "Tent Rental",
+    category: "Camping Equipment",
+    price: 30.0,
+    description: "A two-person tent available for daily rental.",
+    stock: 10,
+    available: true,
+    rating: 4.5,
+    supplier: "Outdoor Rentals Co.",
+    rentalDuration: "24 hours", // Defines rental duration if item is rented
+    discount: 5, // Discount as a percentage, if applicable
+    tags: ["camping", "shelter", "two-person"],
+    imageURL: "https://example.com/images/tent.jpg",
+  },
+  {
+    id: 2,
+    name: "Hiking Boots",
+    category: "Hiking Gear",
+    price: 75.0,
+    description: "Durable hiking boots available in multiple sizes.",
+    stock: 20,
+    available: true,
+    rating: 4.8,
+    supplier: "Park Store",
+    rentalDuration: null, // Set to null if the item is only for purchase
+    discount: 10,
+    tags: ["footwear", "hiking", "all-terrain"],
+    imageURL: "https://example.com/images/hiking-boots.jpg",
+  },
+  {
+    id: 3,
+    name: "Park T-Shirt",
+    category: "Souvenirs",
+    price: 15.0,
+    description: "Commemorative T-shirt with park logo.",
+    stock: 50,
+    available: true,
+    rating: 4.3,
+    supplier: "Park Merchandise",
+    rentalDuration: null,
+    discount: 0,
+    tags: ["apparel", "souvenir", "logo"],
+    imageURL: "https://example.com/images/park-tshirt.jpg",
+  },
+  {
+    id: 4,
+    name: "Backpack",
+    category: "Hiking Gear",
+    price: 40.0,
+    description: "Lightweight backpack suitable for day hikes.",
+    stock: 15,
+    available: true,
+    rating: 4.6,
+    supplier: "Outdoor Essentials",
+    rentalDuration: null,
+    discount: 15,
+    tags: ["gear", "daypack", "hiking"],
+    imageURL: "https://example.com/images/backpack.jpg",
+  },
+  {
+    id: 5,
+    name: "Camping Chair",
+    category: "Camping Equipment",
+    price: 10.0,
+    description: "Foldable camping chair available for rent.",
+    stock: 8,
+    available: true,
+    rating: 4.2,
+    supplier: "Camp Co.",
+    rentalDuration: "24 hours",
+    discount: 5,
+    tags: ["seating", "camping", "portable"],
+    imageURL: "https://example.com/images/camping-chair.jpg",
+  },
+  {
+    id: 6,
+    name: "Water Bottle",
+    category: "Souvenirs",
+    price: 8.0,
+    description: "Reusable water bottle with park logo.",
+    stock: 30,
+    available: true,
+    rating: 4.7,
+    supplier: "Eco Gear",
+    rentalDuration: null,
+    discount: 0,
+    tags: ["drinkware", "souvenir", "eco-friendly"],
+    imageURL: "https://example.com/images/water-bottle.jpg",
+  },
+  {
+    id: 7,
+    name: "Binoculars Rental",
+    category: "Outdoor Activities",
+    price: 15.0,
+    description: "Compact binoculars, ideal for bird watching and nature observation.",
+    stock: 12,
+    available: true,
+    rating: 4.6,
+    supplier: "Nature Co.",
+    rentalDuration: "6 hours",
+    discount: 5,
+    tags: ["bird watching", "wildlife", "optics"],
+    imageURL: "https://example.com/images/binoculars.jpg",
+  },
+  {
+    id: 8,
+    name: "Energy Bars (Pack of 5)",
+    category: "Snacks",
+    price: 12.0,
+    description: "Assorted flavors of energy bars, perfect for quick hikes.",
+    stock: 25,
+    available: true,
+    rating: 4.4,
+    supplier: "Trail Snacks Inc.",
+    rentalDuration: null,
+    discount: 10,
+    tags: ["snacks", "energy", "food"],
+    imageURL: "https://example.com/images/energy-bars.jpg",
+  },
+  {
+    id: 9,
+    name: "Park Map",
+    category: "Guides",
+    price: 2.0,
+    description: "Detailed map of the park with marked trails and points of interest.",
+    stock: 100,
+    available: true,
+    rating: 4.9,
+    supplier: "Park Info Services",
+    rentalDuration: null,
+    discount: 0,
+    tags: ["map", "guide", "navigation"],
+    imageURL: "https://example.com/images/park-map.jpg",
+  },
+  {
+    id: 10,
+    name: "Sleeping Bag Rental",
+    category: "Camping Equipment",
+    price: 20.0,
+    description: "Warm and comfortable sleeping bag, available for overnight rental.",
+    stock: 15,
+    available: true,
+    rating: 4.3,
+    supplier: "Outdoor Rentals Co.",
+    rentalDuration: "24 hours",
+    discount: 10,
+    tags: ["camping", "sleep", "overnight"],
+    imageURL: "https://example.com/images/sleeping-bag.jpg",
+  },
+  {
+    id: 11,
+    name: "Sun Hat",
+    category: "Apparel",
+    price: 10.0,
+    description: "Wide-brimmed hat to protect against sun during hikes.",
+    stock: 30,
+    available: true,
+    rating: 4.2,
+    supplier: "Park Merchandise",
+    rentalDuration: null,
+    discount: 0,
+    tags: ["apparel", "hat", "sun protection"],
+    imageURL: "https://example.com/images/sun-hat.jpg",
+  },
+  {
+    id: 12,
+    name: "Portable Hammock",
+    category: "Outdoor Activities",
+    price: 25.0,
+    description: "Easy to set up hammock, perfect for relaxing in nature.",
+    stock: 7,
+    available: true,
+    rating: 4.7,
+    supplier: "Outdoor Essentials",
+    rentalDuration: null,
+    discount: 5,
+    tags: ["hammock", "relaxation", "portable"],
+    imageURL: "https://example.com/images/hammock.jpg",
+  },
+  {
+    id: 13,
+    name: "Waterproof Jacket",
+    category: "Apparel",
+    price: 35.0,
+    description: "Lightweight, waterproof jacket to keep you dry on rainy hikes.",
+    stock: 18,
+    available: true,
+    rating: 4.5,
+    supplier: "Park Store",
+    rentalDuration: null,
+    discount: 15,
+    tags: ["apparel", "waterproof", "jacket"],
+    imageURL: "https://example.com/images/waterproof-jacket.jpg",
+  },
+  {
+    id: 14,
+    name: "Firewood Bundle",
+    category: "Camping Supplies",
+    price: 8.0,
+    description: "Bundle of firewood suitable for campfires.",
+    stock: 50,
+    available: true,
+    rating: 4.8,
+    supplier: "Park Store",
+    rentalDuration: null,
+    discount: 0,
+    tags: ["campfire", "wood", "camping"],
+    imageURL: "https://example.com/images/firewood.jpg",
+  },
+  {
+    id: 15,
+    name: "Portable Grill",
+    category: "Camping Equipment",
+    price: 50.0,
+    description: "Compact grill for outdoor cooking. Ideal for picnics and campsites.",
+    stock: 5,
+    available: true,
+    rating: 4.4,
+    supplier: "Camp Co.",
+    rentalDuration: "24 hours",
+    discount: 10,
+    tags: ["cooking", "grill", "portable"],
+    imageURL: "https://example.com/images/portable-grill.jpg",
+  },
+];
