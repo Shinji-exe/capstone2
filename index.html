@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/customs.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <script defer src="./scripts/script.js"></script>
+    <script defer src="./scripts/sidebar.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -15,7 +16,7 @@
         <a href="index.html">
           <img src="./homeImages/logoipsum-215.svg" alt="logo" />
         </a>
-        <ul class="nav nav-underline align-content-center">
+        <ul id="desktopNav" class="nav nav-underline align-content-center">
           <li class="nav-item">
             <a class="nav-link active" href="parks.html">Parks</a>
           </li>
@@ -23,32 +24,38 @@
             <a class="nav-link" href="mountain.html">Mountains</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">Store</a>
+            <a class="nav-link" href="store.html">Store</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="">Map</a>
           </li>
+          <li>
+            <a href="#" class="close">
+              <i class="bi bi-x-circle"></i>
+            </a>
+          </li>
         </ul>
+        <i id="listButton" class="bi bi-list h2" onclick=""></i>
       </nav>
       <!-- <a href="">Contact Us</a> -->
     </header>
 
     <main>
-      <section id="section1" class="">
-        <img src="./homeImages/4k-mountain-l3f04sogeaabr5h0.jpg" class="w-100 back1" alt="" />
+      <section id="section1" class="d-flex justify-content-center align-items-center">
+        <!-- <img src="./homeImages/4k-mountain-l3f04sogeaabr5h0.jpg" class="w-100 back1" alt="" /> -->
 
-        <!-- <div class="intoSection text-center text-light back1">
-          <h1 class="">Think about your future</h1>
+        <div class="intoSection text-center text-white back1">
+          <h1 class="">Enjoying the Outdoors?</h1>
           <p>At Futurecorp. We take care of your needs and keep you at peace</p>
           <button class="btn btn-primary">
-            <a href="#temp" class="text-light text-decoration-none">Mortgage</a>
+            <a href="#temp" class="text-light text-decoration-none">Explore</a>
           </button>
-        </div> -->
+        </div>
       </section>
 
-      <section class="container my-3">
+      <section id="temp" class="container my-3">
         <section class="row">
-          <section class="col-6">
+          <section class="col-md-6">
             <img class="img-fluid spara" src="./parksFolder/thumb-1920-885421.jpg" />
           </section>
           <section class="col-6">
@@ -63,7 +70,7 @@
 
       <section class="container my-3">
         <section class="row">
-          <section class="col-6">
+          <section class="col-md-6">
             <p class="spara">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente illo dicta nostrum minus libero
               consequuntur eius optio? Veniam corrupti nobis fuga, repellat nemo ipsa hic sapiente cupiditate magnam quo
@@ -71,14 +78,17 @@
             </p>
           </section>
           <section class="col-6">
-            <img class="img-fluid spara" src="./mountainFolder/rocky-mountain-national-park-desktop-background.webp" />
+            <img
+              class="img-fluid spara w-100"
+              src="./mountainFolder/rocky-mountain-national-park-desktop-background.webp"
+            />
           </section>
         </section>
       </section>
 
       <section class="container my-3">
         <section class="row">
-          <section class="col-6">
+          <section class="col-md-6">
             <img class="img-fluid spara" src="./parksFolder/thumb-1920-885421.jpg" />
           </section>
           <section class="col-6">
@@ -92,41 +102,39 @@
       </section>
 
       <section class="container d-flex justify-content-between">
-        <section class=" my-3">
+        <section class="my-3">
           <section class="row">
-            <section class="col-4">
-              <div class="card spara" >
-                <img src="..." class="card-img-top" alt="..." />
+            <section class="col-md-4">
+              <div class="card spara h-100 cardDisplay my-md-3">
+                <img
+                  src="homeImages/679658-1920x1080-desktop-full-hd-yosemite-national-park-background-photo.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </p>
+                  <h5 class="card-title">Popular Mountains</h5>
+                  <p class="card-text">Here's a list of the most popular mountains by ranking.</p>
                   <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
               </div>
             </section>
-            <section class="col-4">
-              <div class="card spara" >
-                <img src="..." class="card-img-top spara" alt="..." />
+            <section class="col-md-4">
+              <div class="card spara h-100 cardDisplay my-md-3">
+                <img src="parksFolder/arches-at-night-1-1.jpg" class="card-img-top spara" alt="..." />
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </p>
+                  <h5 class="card-title">Stargazing</h5>
+                  <p class="card-text">Top ten places to catch the stary night sky in the United States.</p>
                   <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
               </div>
             </section>
-  
-            <section class="col-4">
-              <div class="card spara" >
-                <img src="..." class="card-img-top" alt="..." />
+
+            <section class="col-md-4">
+              <div class="card spara h-100 cardDisplay my-md-3">
+                <img src="parksFolder/thumb-1920-545828.jpg" class="card-img-top imgSection" alt="..." />
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </p>
+                  <h5 class="card-title">Mt.Fuji</h5>
+                  <p class="card-text">Learn why Mt.Fuji is among the most popular mountains on earth.</p>
                   <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
               </div>
@@ -134,10 +142,9 @@
           </section>
         </section>
       </section>
-     
     </main>
 
-    <footer class="bg-dark text-light py-3">
+    <footer class="bg-dark text-light mt-3 py-3 h-50">
       <div class="container-fluid">
         <div class="row">
           <div class="col col-lg-4 text-light">

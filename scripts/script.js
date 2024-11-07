@@ -10,13 +10,13 @@ window.addEventListener("scroll", () => {
 
 const paragraphs = document.querySelectorAll(".spara");
 
-document.addEventListener("scroll",()=>{
-paragraphs.forEach(paragraph => {
-    if(showParagraph(paragraph)){
-        paragraph.classList.add("spara--visible")
+document.addEventListener("scroll", () => {
+  paragraphs.forEach((paragraph) => {
+    if (showParagraph(paragraph)) {
+      paragraph.classList.add("spara--visible");
     }
-})
-})
+  });
+});
 
 function showParagraph(element) {
   const section = element.getBoundingClientRect();
@@ -37,7 +37,7 @@ const marketplaceItems = [
     rentalDuration: "24 hours", // Defines rental duration if item is rented
     discount: 5, // Discount as a percentage, if applicable
     tags: ["camping", "shelter", "two-person"],
-    imageURL: "https://example.com/images/tent.jpg",
+    imageURL: "burnt-orange-free-duo_2048x.webp",
   },
   {
     id: 2,
@@ -52,7 +52,7 @@ const marketplaceItems = [
     rentalDuration: null, // Set to null if the item is only for purchase
     discount: 10,
     tags: ["footwear", "hiking", "all-terrain"],
-    imageURL: "https://example.com/images/hiking-boots.jpg",
+    imageURL: "Berghaus-VC22-Mid-GTX-01.avif",
   },
   {
     id: 3,
@@ -67,7 +67,7 @@ const marketplaceItems = [
     rentalDuration: null,
     discount: 0,
     tags: ["apparel", "souvenir", "logo"],
-    imageURL: "https://example.com/images/park-tshirt.jpg",
+    imageURL: "preview (1).jpeg",
   },
   {
     id: 4,
@@ -82,7 +82,7 @@ const marketplaceItems = [
     rentalDuration: null,
     discount: 15,
     tags: ["gear", "daypack", "hiking"],
-    imageURL: "https://example.com/images/backpack.jpg",
+    imageURL: "osprey.jpg",
   },
   {
     id: 5,
@@ -97,7 +97,7 @@ const marketplaceItems = [
     rentalDuration: "24 hours",
     discount: 5,
     tags: ["seating", "camping", "portable"],
-    imageURL: "https://example.com/images/camping-chair.jpg",
+    imageURL: "81Kk3uGfm4L.jpg",
   },
   {
     id: 6,
@@ -112,7 +112,7 @@ const marketplaceItems = [
     rentalDuration: null,
     discount: 0,
     tags: ["drinkware", "souvenir", "eco-friendly"],
-    imageURL: "https://example.com/images/water-bottle.jpg",
+    imageURL: "preview (5).jpeg",
   },
   {
     id: 7,
@@ -127,7 +127,7 @@ const marketplaceItems = [
     rentalDuration: "6 hours",
     discount: 5,
     tags: ["bird watching", "wildlife", "optics"],
-    imageURL: "https://example.com/images/binoculars.jpg",
+    imageURL: "91qe50c4eJL._AC_UF894,1000_QL80_.jpg",
   },
   {
     id: 8,
@@ -142,7 +142,7 @@ const marketplaceItems = [
     rentalDuration: null,
     discount: 10,
     tags: ["snacks", "energy", "food"],
-    imageURL: "https://example.com/images/energy-bars.jpg",
+    imageURL: "clifimages.jpeg",
   },
   {
     id: 9,
@@ -157,7 +157,7 @@ const marketplaceItems = [
     rentalDuration: null,
     discount: 0,
     tags: ["map", "guide", "navigation"],
-    imageURL: "https://example.com/images/park-map.jpg",
+    imageURL: "il_570xN.3746563200_77ur.avif",
   },
   {
     id: 10,
@@ -172,7 +172,7 @@ const marketplaceItems = [
     rentalDuration: "24 hours",
     discount: 10,
     tags: ["camping", "sleep", "overnight"],
-    imageURL: "https://example.com/images/sleeping-bag.jpg",
+    imageURL: "71iS3T651nL.jpg",
   },
   {
     id: 11,
@@ -187,7 +187,7 @@ const marketplaceItems = [
     rentalDuration: null,
     discount: 0,
     tags: ["apparel", "hat", "sun protection"],
-    imageURL: "https://example.com/images/sun-hat.jpg",
+    imageURL: "2e963d145e504344a8f27547a2e6704d.thumbnail.0000000000.webp",
   },
   {
     id: 12,
@@ -202,7 +202,7 @@ const marketplaceItems = [
     rentalDuration: null,
     discount: 5,
     tags: ["hammock", "relaxation", "portable"],
-    imageURL: "https://example.com/images/hammock.jpg",
+    imageURL: "Rust-Titanium_MIUSA.webp",
   },
   {
     id: 13,
@@ -217,7 +217,7 @@ const marketplaceItems = [
     rentalDuration: null,
     discount: 15,
     tags: ["apparel", "waterproof", "jacket"],
-    imageURL: "https://example.com/images/waterproof-jacket.jpg",
+    imageURL: "preview (4).jpeg",
   },
   {
     id: 14,
@@ -232,7 +232,7 @@ const marketplaceItems = [
     rentalDuration: null,
     discount: 0,
     tags: ["campfire", "wood", "camping"],
-    imageURL: "https://example.com/images/firewood.jpg",
+    imageURL: "firewood-featured.webp",
   },
   {
     id: 15,
@@ -247,6 +247,229 @@ const marketplaceItems = [
     rentalDuration: "24 hours",
     discount: 10,
     tags: ["cooking", "grill", "portable"],
-    imageURL: "https://example.com/images/portable-grill.jpg",
+    imageURL: "61jZwWjCG2S.jpg",
   },
 ];
+
+const storeCategory = document.querySelector("#storeCategory");
+const showCase = document.querySelector("#showCase");
+
+function displayAllStoreOptions() {
+  const categories = new Set(["All"]);
+
+  for (let i = 0; i < marketplaceItems.length; i++) {
+    // for(let x = 0; x < marketplaceItems[i].tags.length; i++){
+    categories.add(marketplaceItems[i].category);
+    // }
+  }
+  categories.forEach((category) => {
+    let createOptions = document.createElement("option");
+    createOptions.value = category;
+    createOptions.innerText = category;
+    storeCategory.appendChild(createOptions);
+  });
+  // let createOptions = document.createElement("option");
+  // createOptions.value = marketplaceItems[i].category;
+  // createOptions.innerText = marketplaceItems[i].category;
+  // storeCategory.appendChild(createOptions);
+}
+
+displayAllStoreOptions();
+
+function createCardsOfProducts() {
+  showCase.innerHTML = "";
+
+  marketplaceItems.forEach((item) => {
+    let columns = document.createElement("div");
+    columns.classList.add("col-md-4", "my-4");
+
+    let createElement = document.createElement("div");
+    createElement.classList.add("card", "h-100");
+
+    let createCardHeader = document.createElement("div");
+    createCardHeader.classList.add("card-header");
+    createElement.appendChild(createCardHeader);
+
+    let createCardHeaderText = document.createElement("p");
+    createCardHeaderText.innerText = item.category;
+    createCardHeader.appendChild(createCardHeaderText);
+
+    let mountainImage = document.createElement("img");
+    mountainImage.setAttribute("src", `parkmountainsproduct/${item.imageURL}`);
+    createElement.appendChild(mountainImage);
+
+    let createCardBody = document.createElement("div");
+    createCardBody.classList.add("card-body");
+    createElement.appendChild(createCardBody);
+
+    let buttonForShow = document.createElement("button");
+    buttonForShow.classList.add("btn", "btn-primary", "w-25", "mb-3", "rounded-5", "ms-3");
+    buttonForShow.innerText = "Show";
+
+    buttonForShow.addEventListener("click", () => {
+      if (buttonForShow.innerText === "Hide") {
+        buttonForShow.innerText = "Show";
+        createCardBodyText.style.display = "none";
+      } else {
+        buttonForShow.innerText = "Hide";
+        createCardBodyText.style.display = "block";
+      }
+    });
+    createElement.appendChild(buttonForShow);
+
+    let createCardBodyTextTwo = document.createElement("p");
+    createCardBodyTextTwo.innerText = item.name;
+    createCardBody.appendChild(createCardBodyTextTwo);
+
+    let createCardBodyText = document.createElement("p");
+    createCardBodyText.innerText = item.description;
+    createCardBodyText.style.display = "none";
+    createCardBody.appendChild(createCardBodyText);
+
+    let createCardImageTop = document.createElement("img");
+    createCardImageTop.classList.add("card-img-top");
+    createElement.appendChild(createCardImageTop);
+
+    let createCardFooter = document.createElement("div");
+    createCardFooter.classList.add("card-footer", "text-center");
+    createElement.appendChild(createCardFooter);
+
+    // let createTextFooter = document.createElement("p");
+    // createTextFooter.innerText = `Coordinates are ${mountain.coords.lat} and ${mountain.coords.lng}`;
+    // createCardFooter.appendChild(createTextFooter);
+
+    // columns.appendChild(createElement);
+    columns.appendChild(createElement);
+    showCase.appendChild(columns);
+  });
+}
+
+createCardsOfProducts();
+
+function showCertainItems() {
+  let categoryId = storeCategory.value;
+
+  let categoryFilter =
+    categoryId === "All" ? marketplaceItems : marketplaceItems.filter((item) => item.category === categoryId);
+
+  // let items = categoryFilter[i]
+  showCase.innerHTML = "";
+
+  for (let i = 0; i < categoryFilter.length; i++) {
+    let item = categoryFilter[i];
+    let columns = document.createElement("div");
+    columns.classList.add("col-md-4", "my-4");
+
+    let createElement = document.createElement("div");
+    createElement.classList.add("card", "h-100");
+
+    let createCardHeader = document.createElement("div");
+    createCardHeader.classList.add("card-header");
+    createElement.appendChild(createCardHeader);
+
+    let createCardHeaderText = document.createElement("p");
+    createCardHeaderText.innerText = item.category;
+    createCardHeader.appendChild(createCardHeaderText);
+
+    let mountainImage = document.createElement("img");
+    mountainImage.setAttribute("src", `parkmountainsproduct/${item.imageURL}`);
+    createElement.appendChild(mountainImage);
+
+    let createCardBody = document.createElement("div");
+    createCardBody.classList.add("card-body");
+    createElement.appendChild(createCardBody);
+
+    let buttonForShow = document.createElement("button");
+    buttonForShow.classList.add("btn", "btn-primary", "w-25", "mb-3", "rounded-5", "ms-3");
+    buttonForShow.innerText = "Show";
+
+    buttonForShow.addEventListener("click", () => {
+      if (buttonForShow.innerText === "Hide") {
+        buttonForShow.innerText = "Show";
+        createCardBodyText.style.display = "none";
+      } else {
+        buttonForShow.innerText = "Hide";
+        createCardBodyText.style.display = "block";
+      }
+    });
+    createElement.appendChild(buttonForShow);
+
+    let createCardBodyText = document.createElement("p");
+    createCardBodyText.innerText = item.description;
+    createCardBodyText.style.display = "none";
+    createCardBody.appendChild(createCardBodyText);
+
+    let createCardImageTop = document.createElement("img");
+    createCardImageTop.classList.add("card-img-top");
+    createElement.appendChild(createCardImageTop);
+
+    let createCardFooter = document.createElement("div");
+    createCardFooter.classList.add("card-footer", "text-center");
+    createElement.appendChild(createCardFooter);
+
+    // let createTextFooter = document.createElement("p");
+    // createTextFooter.innerText = `Coordinates are ${mountain.coords.lat} and ${mountain.coords.lng}`;
+    // createCardFooter.appendChild(createTextFooter);
+
+    // columns.appendChild(createElement);
+    columns.appendChild(createElement);
+    showCase.appendChild(columns);
+  }
+  // let columns = document.createElement("div");
+  // columns.classList.add("col-md-4", "my-4");
+
+  // let createElement = document.createElement("div");
+  // createElement.classList.add("card", "h-100");
+
+  // let createCardHeader = document.createElement("div");
+  // createCardHeader.classList.add("card-header");
+  // createElement.appendChild(createCardHeader);
+
+  // let createCardHeaderText = document.createElement("p");
+  // createCardHeaderText.innerText = item.category;
+  // createCardHeader.appendChild(createCardHeaderText);
+
+  // let mountainImage = document.createElement("img");
+  // mountainImage.setAttribute("src", `images/${item.imageURL}`);
+  // createElement.appendChild(mountainImage);
+
+  // let createCardBody = document.createElement("div");
+  // createCardBody.classList.add("card-body");
+  // createElement.appendChild(createCardBody);
+
+  // let buttonForShow = document.createElement("button");
+  // buttonForShow.classList.add("btn", "btn-primary", "w-25", "mb-3", "rounded-5", "ms-3");
+  // buttonForShow.innerText = "Show";
+
+  // buttonForShow.addEventListener("click", () => {
+  //   if (buttonForShow.innerText === "Hide") {
+  //     buttonForShow.innerText = "Show";
+  //     createCardBodyText.style.display = "none";
+  //   } else {
+  //     buttonForShow.innerText = "Hide";
+  //     createCardBodyText.style.display = "block";
+  //   }
+  // });
+  // createElement.appendChild(buttonForShow);
+
+  // let createCardBodyText = document.createElement("p");
+  // createCardBodyText.innerText = item.description;
+  // createCardBodyText.style.display = "none";
+  // createCardBody.appendChild(createCardBodyText);
+
+  // let createCardImageTop = document.createElement("img");
+  // createCardImageTop.classList.add("card-img-top");
+  // createElement.appendChild(createCardImageTop);
+
+  // let createCardFooter = document.createElement("div");
+  // createCardFooter.classList.add("card-footer", "text-center");
+  // createElement.appendChild(createCardFooter);
+
+  // // let createTextFooter = document.createElement("p");
+  // // createTextFooter.innerText = `Coordinates are ${mountain.coords.lat} and ${mountain.coords.lng}`;
+  // // createCardFooter.appendChild(createTextFooter);
+
+  // // columns.appendChild(createElement);
+  // columns.appendChild(createElement);
+  // showCase.appendChild(columns);
+}
