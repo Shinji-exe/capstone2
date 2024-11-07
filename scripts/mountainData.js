@@ -550,7 +550,7 @@ function populateMountainOption() {
 }
 populateMountainOption();
 
-function displayMountainCards() {
+async function displayMountainCards() {
   showCase.innerHTML = "";
 
   mountainsArray.forEach((mountain) => {
@@ -608,13 +608,15 @@ function displayMountainCards() {
     createTextFooter.innerText = `Coordinates are ${mountain.coords.lat} and ${mountain.coords.lng}`;
     createCardFooter.appendChild(createTextFooter);
 
+   let data =  getSunsetForMountain(mountain.coords.lat, mountain.coords.lng)
+   console.log(data)
     // columns.appendChild(createElement);
     columns.appendChild(createElement);
     showCase.appendChild(columns);
   });
 }
 
-displayMountainCards();
+  displayMountainCards();
 
 // mountainsArray.forEach((mountain)=>{
 // cardHeader.innerText = mountain.name
@@ -628,6 +630,15 @@ displayMountainCards();
 //     const cardHeaders = `<section> </section>`;
 //   });
 // }
+
+// async function getSunsetForMountain(lat, lng){
+//   let response = await fetch(
+//   `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`);
+//   let data = await response.json();
+//   return data;
+//   }
+
+
 
 function filterByName() {
   let mountainId = mountainSelector.value;
@@ -677,3 +688,21 @@ function filterByName() {
   }
 }
 
+// const list = async function(){
+//   try {
+//     let geListURL = ( `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`);
+//     const response = await axios.get(geListURL)
+//     console.log(response.data)
+//   } catch (error) {
+//     console.error(error)
+//   }
+// }
+
+// list()
+
+async function getSunsetForMountain(lat, lng){
+  let response = await fetch(
+  `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`);
+  let data = await response.json();
+  return data;
+  }
