@@ -1,7 +1,7 @@
 const gallery = document.getElementById("gallery")
 const popup = document.getElementById("popup")
 const selectedImage = document.getElementById("selectedImage")
-const imageIndex = [1,2,3,4,5,6,7,8,9,10,11,12]
+const imageIndex = [1,2,3,4,5,6,7,8,9,10,11]
 let selectedIndex = null;
 
 imageIndex.forEach((image)=>{
