@@ -1,3 +1,6 @@
+const parkBanner = document.getElementById("parkBanner");
+const mountainBanner = document.getElementById("mountainBanner");
+
 const nationalParksArray = [
   {
     LocationID: "ABLI",
@@ -5892,6 +5895,8 @@ function changeFilterTypeByStates() {
   if (stateType.checked) {
     parkFilterDropDown.innerHTML = "";
     databaseLabel.innerText = "State";
+    parkBanner.style.display = "none";
+    mountainBanner.style.display = "flex";
     for (let i = 0; i < locationsArray.length; i++) {
       let createOptions = document.createElement("option");
       createOptions.innerText = locationsArray[i];
@@ -5902,6 +5907,8 @@ function changeFilterTypeByStates() {
     parkFilterDropDown.innerHTML = "";
     populateParkOptions();
     databaseLabel.innerText = "Park Type";
+    parkBanner.style.display = "flex";
+    mountainBanner.style.display = "none";
   }
 }
 

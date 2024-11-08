@@ -600,7 +600,7 @@ function displayMountainCards() {
     createCardBody.appendChild(createCardBodyText);
 
     let cardBodyTextTwo = document.createElement("p");
-    cardBodyTextTwo.innerText = mountain.effort;
+    cardBodyTextTwo.innerText = "Climb difficulty: " + mountain.effort;
     cardBodyTextTwo.style.display = "none";
     createCardBody.appendChild(cardBodyTextTwo);
 
@@ -630,9 +630,13 @@ function filterByName() {
   let mountainId = mountainSelector.value;
   let selectedMountain = null;
   showCase.innerHTML = "";
+
   for (let i = 0; i < mountainsArray.length; i++) {
     if (mountainsArray[i].name === mountainId) {
       selectedMountain = mountainsArray[i];
+
+      let centerWrap = document.createElement("div");
+      centerWrap.classList.add("center-wrapper");
 
       let createElement = document.createElement("div");
       createElement.classList.add("card", "col-md-4");
@@ -668,6 +672,8 @@ function filterByName() {
       let createTextFooter = document.createElement("p");
       createTextFooter.innerText = `Coordinates are ${mountainsArray[i].coords.lat} and ${mountainsArray[i].coords.lng}`;
       createCardFooter.appendChild(createTextFooter);
+
+      centerWrap.appendChild(createElement);
 
       showCase.appendChild(createElement);
     }

@@ -168,3 +168,42 @@ transform: scale(1.1);
   footer{
     
   }
+
+  .center-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .banner{
+    
+  }
+
+  .park-banner{
+    width: 100%;
+    height: 25rem;
+    background-image: url("/parkandmountaingallery/a47f7b9be114eb5411b8ec660b10d914.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .mountain-banner{
+    width: 100%;
+    height: 25rem;
+    background-image: url("/homeImages/4k-mountain-l3f04sogeaabr5h0.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .c-image {
+    
+    height: 42rem;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    filter: brightness(0.7);
+  }
+  

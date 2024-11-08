@@ -489,3 +489,4 @@ function showCertainItems() {
   // columns.appendChild(createElement);
   // showCase.appendChild(columns);
 }
+
