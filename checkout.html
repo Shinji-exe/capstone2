@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/bootstrap.css" />
+    <link rel="stylesheet" href="./styles/customs.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+    <script defer src="scripts/script.js"></script>
+    <title>Checkout</title>
+  </head>
+  <body>
+    <header class="py-3 border-bottom">
+      <nav class="d-flex justify-content-between align-content-center container-fluid">
+        <a href="index.html">
+          <img src="./homeImages/logoipsum-215.svg" alt="" />
+        </a>
+
+        <i class="bi bi-lock h2"></i>
+      </nav>
+    </header>
+
+    <main class="my-3">
+      <div class="container min-vh-100 d-flex justify-content-evenly border bg-body-tertiary pt-2" id="formal">
+        <form class="row w-100 p-3 d-flex">
+          <div class="my-auto">
+            <img src="./images/logoipsum-220.svg" alt="" />
+          </div>
+
+          <h1>Billing Address</h1>
+
+          <div class="col-6">
+            <label for="Firstname" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="Firstname" required />
+          </div>
+
+          <div class="col-6">
+            <label for="Lastname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="Lastname" required />
+          </div>
+
+          <div class="col-6">
+            <label for="inputAddress" class="form-label">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required />
+          </div>
+
+          <div class="col-6">
+            <label for="inputAddress2" class="form-label">Address 2</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" />
+          </div>
+
+          <div class="col-4">
+            <label for="inputCity" class="form-label">Zip</label>
+            <input type="text" class="form-control" id="inputZip" required />
+          </div>
+
+          <div class="col-4">
+            <label for="inputCity" class="form-label">City</label>
+            <input type="text" class="form-control" id="inputCity" required />
+          </div>
+
+          <div class="col-4">
+            <label for="inputState" class="form-label">State</label>
+            <select id="inputState" class="form-select" required>
+              <option selected>Choose...</option>
+              <option>New York</option>
+              <option>New Jersey</option>
+              <option>California</option>
+            </select>
+          </div>
+
+          <div class="col-8">
+            <label for="inputState" class="form-label">Country</label>
+            <select id="inputState1" class="form-select" required>
+              <option selected>Choose...</option>
+              <option>United States</option>
+              <option>United Kingdom</option>
+              <option>China</option>
+              <option>Russia</option>
+            </select>
+          </div>
+
+          <hr class="mt-3" />
+
+          <div class="col-12 my-3">
+            <div class="mb-1">
+              <input type="checkbox" id="save" />
+              <label for="save">Save info for future purchases?</label>
+            </div>
+
+            <div class="">
+              <input type="checkbox" id="Shipping" />
+              <label for="Shipping">Use current address for shipping?</label>
+            </div>
+          </div>
+
+          <hr class="mt-3" />
+
+          <div>
+            <div>
+              <h3>Payment</h3>
+              <input type="radio" name="flexRadioDefault" id="Credit" />
+              <label for="Credit">Credit Card</label>
+            </div>
+
+            <div>
+              <input type="radio" name="flexRadioDefault" id="Debit" />
+              <label for="Debit">Debit Card</label>
+            </div>
+
+            <div>
+              <input type="radio" name="flexRadioDefault" id="giftcard" />
+              <label for="giftcard">Gift Card</label>
+            </div>
+
+            <div>
+              <input type="radio" name="flexRadioDefault" id="paypal" />
+              <label for="paypal">Paypal</label>
+            </div>
+          </div>
+
+          <div class="row gy-3">
+            <div class="col-md-6">
+              <label for="cc-name" class="form-label">Name on card</label>
+              <input type="text" class="form-control" id="cc-name" placeholder="" required />
+              <small class="text-body-secondary">Full name as displayed on card</small>
+              <div class="invalid-feedback">Name on card is required</div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="cc-number" class="form-label">Credit card number</label>
+              <input type="text" class="form-control" id="cc-number" placeholder="" required />
+              <div class="invalid-feedback">Credit card number is required</div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-expiration" class="form-label">Expiration</label>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="" required />
+              <div class="invalid-feedback">Expiration date required</div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required />
+              <div class="invalid-feedback">Security code required</div>
+            </div>
+            <div class="mt-4">
+              <button class="btn btn-primary">Confirm Order</button>
+            </div>
+          </div>
+        </form>
+
+        <div class="col-lg-4 order-md-last">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-primary">Your cart</span>
+            <span class="badge bg-primary rounded-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h6 class="my-0">Portable Hammock</h6>
+                <small class="text-body-secondary">Brief description</small>
+              </div>
+              <span class="text-body-secondary">$12</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h6 class="my-0">Sony Camera</h6>
+                <small class="text-body-secondary">Brief description</small>
+              </div>
+              <span class="text-body-secondary">$8</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h6 class="my-0">Wiley Walleby: Classic Red</h6>
+                <small class="text-body-secondary">Brief description</small>
+              </div>
+              <span class="text-body-secondary">$5</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
+              <div class="text-success">
+                <h6 class="my-0">Promo code</h6>
+                <small>EXAMPLECODE</small>
+              </div>
+              <span class="text-success">−$5</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total (USD)</span>
+              <strong>$279.00</strong>
+            </li>
+          </ul>
+
+          <form class="card p-2">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Promo code" />
+              <button type="submit" class="btn btn-secondary">Redeem</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-dark text-light mt-3 py-3 h-50">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col col-lg-4 text-light">
+              <h4 class="border-bottom">Logo Ipsum</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p>Phone Number: 347-111-2222</p>
+            </div>
+            <div class="col">
+              <h4 class="border-bottom">Menu</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <a class="text-decoration-none text-light" href="#">Link</a>
+                </li>
+                <li>
+                  <a class="text-decoration-none text-light" href="#">Link</a>
+                </li>
+                <li>
+                  <a class="text-decoration-none text-light" href="#">Link</a>
+                </li>
+                <li>
+                  <a class="text-decoration-none text-light" href="#">Link</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col text-light">
+              <h4 class="border-bottom">Info</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <a class="text-decoration-none text-light" href="#">Link</a>
+                </li>
+                <li>
+                  <a class="text-decoration-none text-light" href="#">Link</a>
+                </li>
+                <li>
+                  <a class="text-decoration-none text-light" href="#">Link</a>
+                </li>
+                <li>
+                  <a class="text-decoration-none text-light" href="#">Link</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col text-light">
+              <h4 class="border-bottom">Categories</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <a class="text-decoration-none text-light" href="#">Link</a>
+                </li>
+                <li>
+                  <a class="text-decoration-none text-light" href="#">Link</a>
+                </li>
+                <!-- <li>
+                  <a href="#">Link</a>
+                </li>
+                <li>
+                  <a href="#">Link</a>
+                </li> -->
+              </ul>
+            </div>
+            <div class="col col-lg-3 text-light">
+              <h4 class="border-bottom border-light">Follow Us</h4>
+              <div class="text-light">
+                <a class="text-decoration-none text-light" href="#"><i class="bi bi-linkedin fs-2 me-2"></i></a>
+  
+                <a class="text-decoration-none text-light" href="#"><i class="bi bi-tiktok fs-2 me-2"></i></a>
+  
+                <a class="text-decoration-none text-light" href="#"><i class="bi bi-facebook fs-2 me-2"></i></a>
+  
+                <a class="text-decoration-none text-light" href="#"><i class="bi bi-instagram fs-2 me-2"></i></a>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div>
+            <p>2024 @ Parks & Mountains. All Rights Reserved</p>
+            <a class="me-2 text-decoration-none text-light" href="#">Terms of Use</a>
+            <a class="text-decoration-none text-light" href="#">Privacy Policy</a>
+          </div>
+        </div>
+      </footer>
+  </body>
+</html>

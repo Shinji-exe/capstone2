@@ -550,7 +550,82 @@ function populateMountainOption() {
 }
 populateMountainOption();
 
-async function displayMountainCards() {
+// async function displayMountainCards() {
+//   showCase.innerHTML = "";
+
+//   for (let mountain of mountainsArray) {
+//     let columns = document.createElement("div");
+//     columns.classList.add("col-md-4", "my-4");
+
+//     let createElement = document.createElement("div");
+//     createElement.classList.add("card", "h-100");
+
+//     // Card Header
+//     let createCardHeader = document.createElement("div");
+//     createCardHeader.classList.add("card-header");
+//     createElement.appendChild(createCardHeader);
+
+//     let createCardHeaderText = document.createElement("p");
+//     createCardHeaderText.innerText = mountain.name;
+//     createCardHeader.appendChild(createCardHeaderText);
+
+//     // Mountain Image
+//     let mountainImage = document.createElement("img");
+//     mountainImage.classList.add("card-img-top");
+//     mountainImage.setAttribute("src", `images/${mountain.img}`);
+//     createElement.appendChild(mountainImage);
+
+//     // Card Body
+//     let createCardBody = document.createElement("div");
+//     createCardBody.classList.add("card-body");
+//     createElement.appendChild(createCardBody);
+
+//     // Show/Hide Button
+//     let buttonForShow = document.createElement("button");
+//     buttonForShow.classList.add("btn", "btn-primary", "w-25", "mb-3", "rounded-5", "ms-3");
+//     buttonForShow.innerText = "Show";
+
+//     let createCardBodyText = document.createElement("p");
+//     createCardBodyText.innerText = mountain.desc;
+//     createCardBodyText.style.display = "none";
+//     createCardBody.appendChild(createCardBodyText);
+
+//     buttonForShow.addEventListener("click", () => {
+//       if (buttonForShow.innerText === "Hide") {
+//         buttonForShow.innerText = "Show";
+//         createCardBodyText.style.display = "none";
+//       } else {
+//         buttonForShow.innerText = "Hide";
+//         createCardBodyText.style.display = "block";
+//       }
+//     });
+
+//     createElement.appendChild(buttonForShow);
+
+//     // Card Footer
+//     let createCardFooter = document.createElement("div");
+//     createCardFooter.classList.add("card-footer", "text-center");
+//     createElement.appendChild(createCardFooter);
+
+//     let createTextFooter = document.createElement("p");
+//     createTextFooter.innerText = `Coordinates are ${mountain.coords.lat} and ${mountain.coords.lng}`;
+//     createCardFooter.appendChild(createTextFooter);
+
+//     // Fetch and Display Sunset Time
+//     let data = await getSunsetForMountain(mountain.coords.lat, mountain.coords.lng);
+//     let sunsetText = document.createElement("p");
+//     sunsetText.innerText = `Sunset: ${data.results.sunset}`;
+//     createCardFooter.appendChild(sunsetText);
+
+//     // Append Card to Columns and ShowCase
+//     columns.appendChild(createElement);
+//     showCase.appendChild(columns);
+//   }
+// }
+
+// displayMountainCards();
+
+function displayMountainCards() {
   showCase.innerHTML = "";
 
   mountainsArray.forEach((mountain) => {
@@ -584,9 +659,12 @@ async function displayMountainCards() {
       if (buttonForShow.innerText === "Hide") {
         buttonForShow.innerText = "Show";
         createCardBodyText.style.display = "none";
+
+         cardBodyTextTwo.style.display = "none"
       } else {
         buttonForShow.innerText = "Hide";
         createCardBodyText.style.display = "block";
+        cardBodyTextTwo.style.display = "block";
       }
     });
     createElement.appendChild(buttonForShow);
@@ -595,6 +673,11 @@ async function displayMountainCards() {
     createCardBodyText.innerText = mountain.desc;
     createCardBodyText.style.display = "none";
     createCardBody.appendChild(createCardBodyText);
+
+    let cardBodyTextTwo = document.createElement("p");
+    cardBodyTextTwo.innerText = mountain.effort;
+    cardBodyTextTwo.style.display = "none";
+    createCardBody.appendChild(cardBodyTextTwo);
 
     let createCardImageTop = document.createElement("img");
     createCardImageTop.classList.add("card-img-top");
@@ -608,37 +691,15 @@ async function displayMountainCards() {
     createTextFooter.innerText = `Coordinates are ${mountain.coords.lat} and ${mountain.coords.lng}`;
     createCardFooter.appendChild(createTextFooter);
 
-   let data =  getSunsetForMountain(mountain.coords.lat, mountain.coords.lng)
-   console.log(data)
+    // let data = getSunsetForMountain(mountain.coords.lat, mountain.coords.lng);
+    // console.log(data);
     // columns.appendChild(createElement);
     columns.appendChild(createElement);
     showCase.appendChild(columns);
   });
 }
 
-  displayMountainCards();
-
-// mountainsArray.forEach((mountain)=>{
-// cardHeader.innerText = mountain.name
-// cardImage.setAttribute("src", `images/${mountain.img}`)
-// })
-// function getMountainsInfo(mountainSide) {
-//   mountainsArray.forEach((mountain) => {
-//     let cardBase = document.createElement("div");
-//     cardBase.classList.add("card");
-
-//     const cardHeaders = `<section> </section>`;
-//   });
-// }
-
-// async function getSunsetForMountain(lat, lng){
-//   let response = await fetch(
-//   `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`);
-//   let data = await response.json();
-//   return data;
-//   }
-
-
+displayMountainCards();
 
 function filterByName() {
   let mountainId = mountainSelector.value;
@@ -700,9 +761,9 @@ function filterByName() {
 
 // list()
 
-async function getSunsetForMountain(lat, lng){
-  let response = await fetch(
-  `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`);
-  let data = await response.json();
-  return data;
-  }
+// async function getSunsetForMountain(lat, lng) {
+//   let response = await fetch(`https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`);
+//   console.log(response); // Check if this logs correctly
+//   let data = await response.json();
+//   return data;
+// }

@@ -302,43 +302,59 @@ function createCardsOfProducts() {
     createCardBody.classList.add("card-body");
     createElement.appendChild(createCardBody);
 
-    let buttonForShow = document.createElement("button");
-    buttonForShow.classList.add("btn", "btn-primary", "w-25", "mb-3", "rounded-5", "ms-3");
-    buttonForShow.innerText = "Show";
+    // let buttonForShow = document.createElement("button");
+    // buttonForShow.classList.add("btn", "btn-primary", "w-25", "mb-3", "rounded-5", "ms-3");
+    // buttonForShow.innerText = "Show";
 
-    buttonForShow.addEventListener("click", () => {
-      if (buttonForShow.innerText === "Hide") {
-        buttonForShow.innerText = "Show";
-        createCardBodyText.style.display = "none";
-      } else {
-        buttonForShow.innerText = "Hide";
-        createCardBodyText.style.display = "block";
-      }
-    });
-    createElement.appendChild(buttonForShow);
+    let purchaseButton = document.createElement("button");
+    purchaseButton.classList.add("btn", "btn-primary", "w-25", "mb-3", "rounded-5", "ms-3")
+    purchaseButton.innerText = "Buy"
+    createElement.appendChild(purchaseButton)
+
+    // buttonForShow.addEventListener("click", () => {
+    //   if (buttonForShow.innerText === "Hide") {
+    //     buttonForShow.innerText = "Show";
+    //     createCardBodyText.style.display = "none";
+    //   } else {
+    //     buttonForShow.innerText = "Hide";
+    //     createCardBodyText.style.display = "block";
+    //   }
+    // });
+    // createElement.appendChild(buttonForShow);
 
     let createCardBodyTextTwo = document.createElement("p");
     createCardBodyTextTwo.innerText = item.name;
     createCardBody.appendChild(createCardBodyTextTwo);
 
+    let createCardBodyTextThree = document.createElement("p");
+    createCardBodyTextThree.innerText = '$' +item.price;
+    createCardBody.appendChild(createCardBodyTextThree);
+
     let createCardBodyText = document.createElement("p");
     createCardBodyText.innerText = item.description;
-    createCardBodyText.style.display = "none";
+    // createCardBodyText.style.display = "none";
     createCardBody.appendChild(createCardBodyText);
 
     let createCardImageTop = document.createElement("img");
     createCardImageTop.classList.add("card-img-top");
     createElement.appendChild(createCardImageTop);
 
+
     let createCardFooter = document.createElement("div");
     createCardFooter.classList.add("card-footer", "text-center");
     createElement.appendChild(createCardFooter);
 
-    // let createTextFooter = document.createElement("p");
-    // createTextFooter.innerText = `Coordinates are ${mountain.coords.lat} and ${mountain.coords.lng}`;
-    // createCardFooter.appendChild(createTextFooter);
+    let containerTags = document.createElement("div")
+    containerTags.classList.add("tag-container", "text-center", "mt-2", "d-flex", "flex-row")
+    item.tags.forEach((tag)=>{
+      let createTextFooter = document.createElement("p");
+      createTextFooter.innerText = `${tag}`;
+      createCardFooter.appendChild(createTextFooter);
+    })
 
-    // columns.appendChild(createElement);
+
+
+     columns.appendChild(createElement);
     columns.appendChild(createElement);
     showCase.appendChild(columns);
   });
