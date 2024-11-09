@@ -395,24 +395,32 @@ function showCertainItems() {
     createCardBody.classList.add("card-body");
     createElement.appendChild(createCardBody);
 
+    let createCardBodyTextTwo = document.createElement("p");
+    createCardBodyTextTwo.innerText = item.name;
+    createCardBody.appendChild(createCardBodyTextTwo);
+
+    let createCardBodyTextThree = document.createElement("p");
+    createCardBodyTextThree.innerText = '$' +item.price;
+    createCardBody.appendChild(createCardBodyTextThree);
+
     let buttonForShow = document.createElement("button");
     buttonForShow.classList.add("btn", "btn-primary", "w-25", "mb-3", "rounded-5", "ms-3");
-    buttonForShow.innerText = "Show";
+    buttonForShow.innerText = "Buy";
 
-    buttonForShow.addEventListener("click", () => {
-      if (buttonForShow.innerText === "Hide") {
-        buttonForShow.innerText = "Show";
-        createCardBodyText.style.display = "none";
-      } else {
-        buttonForShow.innerText = "Hide";
-        createCardBodyText.style.display = "block";
-      }
-    });
-    createElement.appendChild(buttonForShow);
+    // buttonForShow.addEventListener("click", () => {
+    //   if (buttonForShow.innerText === "Hide") {
+    //     buttonForShow.innerText = "Show";
+    //     createCardBodyText.style.display = "none";
+    //   } else {
+    //     buttonForShow.innerText = "Hide";
+    //     createCardBodyText.style.display = "block";
+    //   }
+    // });
+     createElement.appendChild(buttonForShow);
 
     let createCardBodyText = document.createElement("p");
     createCardBodyText.innerText = item.description;
-    createCardBodyText.style.display = "none";
+    // createCardBodyText.style.display = "none";
     createCardBody.appendChild(createCardBodyText);
 
     let createCardImageTop = document.createElement("img");
@@ -431,62 +439,5 @@ function showCertainItems() {
     columns.appendChild(createElement);
     showCase.appendChild(columns);
   }
-  // let columns = document.createElement("div");
-  // columns.classList.add("col-md-4", "my-4");
-
-  // let createElement = document.createElement("div");
-  // createElement.classList.add("card", "h-100");
-
-  // let createCardHeader = document.createElement("div");
-  // createCardHeader.classList.add("card-header");
-  // createElement.appendChild(createCardHeader);
-
-  // let createCardHeaderText = document.createElement("p");
-  // createCardHeaderText.innerText = item.category;
-  // createCardHeader.appendChild(createCardHeaderText);
-
-  // let mountainImage = document.createElement("img");
-  // mountainImage.setAttribute("src", `images/${item.imageURL}`);
-  // createElement.appendChild(mountainImage);
-
-  // let createCardBody = document.createElement("div");
-  // createCardBody.classList.add("card-body");
-  // createElement.appendChild(createCardBody);
-
-  // let buttonForShow = document.createElement("button");
-  // buttonForShow.classList.add("btn", "btn-primary", "w-25", "mb-3", "rounded-5", "ms-3");
-  // buttonForShow.innerText = "Show";
-
-  // buttonForShow.addEventListener("click", () => {
-  //   if (buttonForShow.innerText === "Hide") {
-  //     buttonForShow.innerText = "Show";
-  //     createCardBodyText.style.display = "none";
-  //   } else {
-  //     buttonForShow.innerText = "Hide";
-  //     createCardBodyText.style.display = "block";
-  //   }
-  // });
-  // createElement.appendChild(buttonForShow);
-
-  // let createCardBodyText = document.createElement("p");
-  // createCardBodyText.innerText = item.description;
-  // createCardBodyText.style.display = "none";
-  // createCardBody.appendChild(createCardBodyText);
-
-  // let createCardImageTop = document.createElement("img");
-  // createCardImageTop.classList.add("card-img-top");
-  // createElement.appendChild(createCardImageTop);
-
-  // let createCardFooter = document.createElement("div");
-  // createCardFooter.classList.add("card-footer", "text-center");
-  // createElement.appendChild(createCardFooter);
-
-  // // let createTextFooter = document.createElement("p");
-  // // createTextFooter.innerText = `Coordinates are ${mountain.coords.lat} and ${mountain.coords.lng}`;
-  // // createCardFooter.appendChild(createTextFooter);
-
-  // // columns.appendChild(createElement);
-  // columns.appendChild(createElement);
-  // showCase.appendChild(columns);
 }
 

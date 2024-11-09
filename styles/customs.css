@@ -2,8 +2,15 @@
     margin: 10px;
 } */
 
+
 html {
   scroll-behavior: smooth;
+  height: 100%;
+}
+
+body{
+  width: 100%;
+overflow-x: hidden;
 }
 
 .back1 {
@@ -29,6 +36,7 @@ html {
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover; */
+   overflow: hidden;
 }
 
 .theMainMountain {
@@ -37,10 +45,11 @@ html {
 
 .theMainStorePage {
   padding-top: 5rem;
+  /* flex: 1; */
 }
 
-.theMainGallery{
-    padding-top: 5rem;
+.theMainGallery {
+  padding-top: 5rem;
 }
 
 .spara {
@@ -97,7 +106,7 @@ transform: scale(1.1);
     align-items: center;
     position: fixed;
     top: 0;
-    right: -400px;
+    right: -500px;
     height: 100vh;
     width: 200px;
     background-color: white;
@@ -120,7 +129,7 @@ transform: scale(1.1);
     margin-top: 5px;
   }
 
-  #textPlacement{
+  #textPlacement {
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -130,80 +139,75 @@ transform: scale(1.1);
 
 /* Popup styling */
 #popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
-    z-index: 1000;
-  }
-  
-  #selectedImage {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
-  }
-  
-  /* Gallery image styling */
-  .galleryImg {
-    width: 100%;
-    height: auto;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: transform 0.2s;
-  }
-  
-  .galleryImg:hover {
-    transform: scale(1.05);
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
 
+#selectedImage {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
 
+/* Gallery image styling */
+.galleryImg {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
 
-  footer{
-    
-  }
+.galleryImg:hover {
+  transform: scale(1.05);
+}
 
-  .center-wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+footer {
+  flex-shrink: 0;
+}
 
-  .banner{
-    
-  }
+.center-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-  .park-banner{
-    width: 100%;
-    height: 25rem;
-    background-image: url("/parkandmountaingallery/a47f7b9be114eb5411b8ec660b10d914.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+.banner {
+}
 
-  .mountain-banner{
-    width: 100%;
-    height: 25rem;
-    background-image: url("/homeImages/4k-mountain-l3f04sogeaabr5h0.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+.park-banner {
+  width: 100%;
+  height: 25rem;
+  background-image: url("/parkandmountaingallery/a47f7b9be114eb5411b8ec660b10d914.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
-  .c-image {
-    
-    height: 42rem;
-    background-position: center;
-    background-size: cover;
-    object-fit: cover;
-    filter: brightness(0.7);
-  }
-  
+.mountain-banner {
+  width: 100%;
+  height: 25rem;
+  background-image: url("/homeImages/4k-mountain-l3f04sogeaabr5h0.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.c-image {
+  height: 42rem;
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
