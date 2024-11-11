@@ -5802,30 +5802,30 @@ function populateParkOptions() {
 }
 populateParkOptions();
 
-function getParkInformation(parksAndReq) {
+function getParkInformation(parks) {
   //buildParkRow
   let tableRow = parksDataTableBody.insertRow();
 
   let tableData = tableRow.insertCell();
-  tableData.innerText = parksAndReq.LocationName;
+  tableData.innerText = parks.LocationName;
 
   let tableData2 = tableRow.insertCell();
-  tableData2.innerText = parksAndReq.Address;
+  tableData2.innerText = parks.Address;
 
   let tableData3 = tableRow.insertCell();
-  tableData3.innerText = parksAndReq.City;
+  tableData3.innerText = parks.City;
 
   let tableData4 = tableRow.insertCell();
-  tableData4.innerText = parksAndReq.State;
+  tableData4.innerText = parks.State;
 
   let tableData5 = tableRow.insertCell();
-  tableData5.innerText = parksAndReq.LocationID;
+  tableData5.innerText = parks.LocationID;
 
   let tableData6 = tableRow.insertCell();
   //   tableData6.innerText = parksAndReq.Visit || "N/A";
-  if (parksAndReq.Visit) {
+  if (parks.Visit) {
     let createLink = document.createElement("a");
-    createLink.href = parksAndReq.Visit;
+    createLink.href = parks.Visit;
     createLink.innerText = "Visit Park";
     createLink.target = "_blank";
     tableData6.appendChild(createLink);
